@@ -101,6 +101,7 @@ python3 --version
 uv --version
 ```
 
+curl -LsSf https://astral.sh/uv/install.sh | sh
 Both should return a version number. If `uv` is missing, install it with the one-liner above.
 
 ---
