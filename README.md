@@ -110,7 +110,7 @@ Both should return a version number. If `uv` is missing, install it with the one
 ## Phase 2 — 📦 Initialise a new project
 
 ```bash
-uv init jev-video
+uv init --package jev-video
 cd jev-video
 ls -la
 ```
