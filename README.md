@@ -107,7 +107,7 @@ Both should return a version number. If `uv` is missing, install it with the one
 
 ---
 
-## Phase 2 — 📦 Initialise a new project
+## Phase 2: 📦 Initialise a new project
 
 ```bash
 uv init --package jev-video
@@ -117,18 +117,17 @@ ls -la
 
 **What `uv init` just scaffolded:**
 
-What uv init just scaffolded:
-
-File / Folder	What it is	What it replaces / means
-pyproject.toml	Your menu card. It holds the project name, version, Python version needed, and the list of dependencies.	Replaces two older files. setup.py answered “what am I, and how do I get built?” and requirements.txt answered “what do I need installed around me?” One file does both jobs now.
-[build-system] section (inside pyproject.toml)	Tells Python how to build and install our package.	This is what lets us import our own code.
-.python-version	A one-line file pinning the Python version (3.12 here).	Tells uv which Python to use. If a teammate clones the repo with uv, they get the right Python automatically.
-README.md	The front page of your GitHub repo, written in Markdown.	Starts nearly empty. Fill it in with what the project does.
-.gitignore	A list of things git must never track.	uv pre-fills it with Python junk like __pycache__/, compiled files and .venv/. Later we’ll add our own secrets file to it.
-.git/	A hidden folder with the full version history.	uv ran git init for us, so there’s no separate setup before pushing to GitHub. Use ls -la to see hidden files.
-src/	The folder where all our code lives.	Keeps our code separate from config files like pyproject.toml.
-src/jev_video/	Our package.	Note the underscore: Python module names can’t contain hyphens, so jev-video becomes jev_video.
-src/jev_video/__init__.py	Marks the folder as a package.	uv put a tiny hello function in it. We’ll leave it alone.
+| File / Folder | What it is | What it replaces / means |
+|---|---|---|
+| `pyproject.toml` | Your menu card. It holds the project name, version, Python version needed, and the list of dependencies. | Replaces two older files. `setup.py` answered "what am I, and how do I get built?" and `requirements.txt` answered "what do I need installed around me?" One file does both jobs now. |
+| `[build-system]` section (inside `pyproject.toml`) | Tells Python how to build and install our package. | This is what lets us import our own code. |
+| `.python-version` | A one-line file pinning the Python version (3.12 here). | Tells uv which Python to use. If a teammate clones the repo with uv, they get the right Python automatically. |
+| `README.md` | The front page of your GitHub repo, written in Markdown. | Starts nearly empty. Fill it in with what the project does. |
+| `.gitignore` | A list of things git must never track. | uv pre-fills it with Python junk like `__pycache__/`, compiled files and `.venv/`. Later we'll add our own secrets file to it. |
+| `.git/` | A hidden folder with the full version history. | uv ran `git init` for us, so there's no separate setup before pushing to GitHub. Use `ls -la` to see hidden files. |
+| `src/` | The folder where all our code lives. | Keeps our code separate from config files like `pyproject.toml`. |
+| `src/jev_video/` | Our package. | Note the underscore: Python module names can't contain hyphens, so `jev-video` becomes `jev_video`. |
+| `src/jev_video/__init__.py` | Marks the folder as a package. | uv put a tiny hello function in it. We'll leave it alone. |
 
 Peek inside:
 
