@@ -117,14 +117,18 @@ ls -la
 
 **What `uv init` just scaffolded:**
 
-| File / Folder | What it is | What it replaces / means |
-|---|---|---|
-| `pyproject.toml` | The project's identity card — name, version, Python required, dependencies | The modern standard that replaces `setup.py` and `requirements.txt`. One file does both jobs. |
-| `.python-version` | A one-line file pinning the Python version (e.g. `3.12`) | Tells `uv` which Python to use. Teammates get the right version automatically. |
-| `main.py` | A hello-world starter | Placeholder — we'll delete it later. |
-| `README.md` | Front page on GitHub | Starts nearly empty. Fill in with what the project does. |
-| `.gitignore` | Files git must never track | Pre-filled with Python junk (`__pycache__/`, `.venv/`, `*.pyc`). We'll add `.env` later. |
-| `.git/` | Hidden folder holding the repo's history | `uv` silently ran `git init` for you. Use `ls -la` to see hidden files. |
+What uv init just scaffolded:
+
+File / Folder	What it is	What it replaces / means
+pyproject.toml	Your menu card. It holds the project name, version, Python version needed, and the list of dependencies.	Replaces two older files. setup.py answered “what am I, and how do I get built?” and requirements.txt answered “what do I need installed around me?” One file does both jobs now.
+[build-system] section (inside pyproject.toml)	Tells Python how to build and install our package.	This is what lets us import our own code.
+.python-version	A one-line file pinning the Python version (3.12 here).	Tells uv which Python to use. If a teammate clones the repo with uv, they get the right Python automatically.
+README.md	The front page of your GitHub repo, written in Markdown.	Starts nearly empty. Fill it in with what the project does.
+.gitignore	A list of things git must never track.	uv pre-fills it with Python junk like __pycache__/, compiled files and .venv/. Later we’ll add our own secrets file to it.
+.git/	A hidden folder with the full version history.	uv ran git init for us, so there’s no separate setup before pushing to GitHub. Use ls -la to see hidden files.
+src/	The folder where all our code lives.	Keeps our code separate from config files like pyproject.toml.
+src/jev_video/	Our package.	Note the underscore: Python module names can’t contain hyphens, so jev-video becomes jev_video.
+src/jev_video/__init__.py	Marks the folder as a package.	uv put a tiny hello function in it. We’ll leave it alone.
 
 Peek inside:
 
