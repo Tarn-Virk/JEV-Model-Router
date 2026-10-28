@@ -221,12 +221,12 @@ Here's where we're heading. Create files as we go — no need to make them all n
 
 ```text
 src/jev_video/
-├── __init__.py          # (already exists, from uv init)
-├── jev.py               # JEV wrapper — the SHARED piece
-├── models.py            # category → model map
-├── caller.py            # calls OpenRouter chat models
-├── router.py            # router logic (classify + route)
-└── chat_app.py          # Streamlit UI for the router
+├── __init__.py    # Marks the folder as a Python package (created by uv init)
+├── jev.py         # Creates the JEV client and exposes ask_jev(); the only file that talks to JEV
+├── models.py      # Maps each category to a model and stores each model's price
+├── caller.py      # Sends a prompt to the chosen model via OpenRouter and returns the reply and cost
+├── router.py      # classify() picks the category; route() runs the full pipeline
+└── chat_app.py    # Streamlit chat page showing each reply with its routing badge
 ```
 
 > 💡 **Big teaching point:** `jev.py` is the shared wrapper. In a sister project (shell-script guardrail), `jev.py` gets reused unchanged by a totally different stack. **One JEV wrapper, many jobs.**
